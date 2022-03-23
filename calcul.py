@@ -68,3 +68,60 @@ class Fenetre(Tk):
         self.boutonpi = Button(padx=14, pady=14, text="π", font=("Courier New", 12, 'bold'),
                                command=lambda: self.clickbutton("pi"), background="light gray", borderwidth=4)
         self.boutonpi.grid(row=6, column=1, columnspan=1)
+
+        # Opérateurs :
+        self.boutonadd = Button(padx=14, pady=14, text="+", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("+"), background="light gray", borderwidth=4)
+        self.boutonadd.grid(row=2, column=4, columnspan=1)
+
+        self.boutonsub = Button(padx=14, pady=14, text="-", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("-"), background="light gray", borderwidth=4)
+        self.boutonsub.grid(row=3, column=4, columnspan=1)
+
+        self.boutonmult = Button(padx=14, pady=14, text="*", font=("Courier New", 12, 'bold'),
+                                 command=lambda: self.clickbutton("*"), background="light gray", borderwidth=4)
+        self.boutonmult.grid(row=4, column=4, columnspan=1)
+
+        self.boutondiv = Button(padx=14, pady=14, text="/", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("/"), background="light gray", borderwidth=4)
+        self.boutondiv.grid(row=5, column=4, columnspan=1)
+
+        self.boutonequal = Button(padx=14, pady=14, text="=", font=("Courier New", 12, 'bold'),
+                                  command=self.equalbutton, background="light gray", borderwidth=4)
+        self.boutonequal.grid(row=6, column=2, columnspan=1)
+        # La touche "=" est relié à la touche entrée du clavier
+        self.bind("<Return>", self.touche_entree_clavier)
+
+        self.boutondecimal = Button(padx=14, pady=14, text=".", font=("Courier New", 12, 'bold'),
+                                    command=lambda: self.clickbutton("."), background="light gray", borderwidth=4)
+        self.boutondecimal.grid(row=6, column=4, columnspan=1)
+
+        # Fonctions :
+        self.boutonsqrt = Button(padx=14, pady=14, text=" √ ", font=("Courier New", 12, 'bold'),
+                                 command=lambda: self.clickbutton("sqrt("), background="light gray", borderwidth=4)
+        self.boutonsqrt.grid(row=2, column=5, columnspan=1)
+
+        self.boutonsin = Button(padx=14, pady=14, text="sin", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("sin("), background="light gray", borderwidth=4)
+        self.boutonsin.grid(row=4, column=5, columnspan=1)
+
+        self.boutoncos = Button(padx=14, pady=14, text="cos", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("cos("), background="light gray", borderwidth=4)
+        self.boutoncos.grid(row=5, column=5, columnspan=1)
+
+        self.boutontan = Button(padx=14, pady=14, text="tan", font=("Courier New", 12, 'bold'),
+                                command=lambda: self.clickbutton("tan("), background="light gray", borderwidth=4)
+        self.boutontan.grid(row=6, column=5, columnspan=1)
+
+        self.boutonpar1 = Button(padx=14, pady=14, text="(", font=("Courier New", 12, 'bold'),
+                                 command=lambda: self.clickbutton("("), background="light gray", borderwidth=4)
+        self.boutonpar1.grid(row=5, column=1, columnspan=1)
+
+        self.boutonpar2 = Button(padx=14, pady=14, text=")", font=("Courier New", 12, 'bold'),
+                                 command=lambda: self.clickbutton(")"), background="light gray", borderwidth=4)
+        self.boutonpar2.grid(row=5, column=3, columnspan=1)
+
+        self.boutonsquare = Button(padx=14, pady=14, text=" ² ", font=("Courier New", 12, 'bold'),
+                                   command=lambda: self.clickbutton("**2"), background="light gray", borderwidth=4)
+        self.boutonsquare.grid(row=3, column=5, columnspan=1)
+
